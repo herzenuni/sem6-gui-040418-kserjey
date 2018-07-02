@@ -14,38 +14,40 @@ class Application(Frame):
     def create_widgets(self):
         self.header = Label(self, text='Ввод данных').grid(row=1, column=3)
 
-        self.x1m_lab = Label(self, text="a1m").grid(row=2, column=1)
+        Label(self, text="a1m").grid(row=2, column=1)
         self.x1m = Entry(self, width=10)
         self.x1m.grid(row=2, column=2)
-        self.x2m_lab = Label(self, text="a2m").grid(row=3, column=1)
+        Label(self, text="a2m").grid(row=3, column=1)
         self.x2m = Entry(self, width=10)
         self.x2m.grid(row=3, column=2)
-        self.x3m_lab = Label(self, text="a3m").grid(row=4, column=1)
+        Label(self, text="a3m").grid(row=4, column=1)
         self.x3m = Entry(self, width=10)
         self.x3m.grid(row=4, column=2)
-        self.x4m_lab = Label(self, text="a4m").grid(row=5, column=1)
+        Label(self, text="a4m").grid(row=5, column=1)
         self.x4m = Entry(self, width=10)
         self.x4m.grid(row=5, column=2)
 
-        self.b1m_lab = Label(self, text="b1m").grid(row=2, column=3)
+        Label(self, text="b1m").grid(row=2, column=3)
         self.b1m = Entry(self, width=10)
         self.b1m.grid(row=2, column=4)
-        self.b2m_lab = Label(self, text="b2m").grid(row=3, column=3)
+        Label(self, text="b2m").grid(row=3, column=3)
         self.b2m = Entry(self, width=10)
         self.b2m.grid(row=3, column=4)
-        self.b3m_lab = Label(self, text="b3m").grid(row=4, column=3)
+        Label(self, text="b3m").grid(row=4, column=3)
         self.b3m = Entry(self, width=10)
         self.b3m.grid(row=4, column=4)
-        self.b4m_lab = Label(self, text="b4m").grid(row=5, column=3)
+        Label(self, text="b4m").grid(row=5, column=3)
         self.b4m = Entry(self, width=10)
         self.b4m.grid(row=5, column=4)
 
-        self.read_button = but_accept1 = Button(
+        self.read_button = Button(
             self, text="Принять", command=self.read_array).grid(row=2, column=7, padx=(10, 0))
         self.solve = Button(self, text="Решить", command=self.solve).grid(
             row=3, column=7, padx=(10, 0))
         self.output = Text(self, bg="lightblue", font="Arial 14",
-                           width=35, height=10).grid(row=12, columnspan=8)
+                           width=35, height=10)
+
+        self.output.grid(row=12, columnspan=8)
 
     def read_row(self, input):
         return [int(item) for item in input.get().split()]
